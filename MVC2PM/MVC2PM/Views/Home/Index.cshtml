@@ -1,0 +1,25 @@
+﻿@model List<MVC2PM.Models.CustomerModel>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<table class="table table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>@item.id</td>
+    <td>@item.name</td>
+    <td>@item.email</td>
+    <td><a href="@Url.Action("Edit","Home", new { item.id})" class="btn btn-success">Edit</a></td>
+    <td><a href="@Url.Action("Delete","Home", new { item.id})" class="btn btn-danger">Delete</a></td>
+     </tr>
+
+         }
+</table>

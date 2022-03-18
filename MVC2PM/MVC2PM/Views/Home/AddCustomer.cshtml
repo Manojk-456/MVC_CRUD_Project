@@ -1,0 +1,21 @@
+﻿@model MVC2PM.Models.CustomerModel
+@{
+    ViewBag.Title = "AddCustomer";
+}
+@using(Html.BeginForm("AddCustomer", "Home", FormMethod.Post))
+{
+    @Html.HiddenFor(m => m.id);
+<h2>AddCustomer page</h2>
+<div class="form-group">
+    <label>Name</label>
+    @Html.TextBoxFor(m => m.name, new { @class = "form-control", @required = "required", @placeholder = "Enter name.." })
+</div>
+
+
+<div class="form-group">
+    <label>Email</label>
+    @Html.TextBoxFor(m => m.email, new { @class = "form-control", @required = "required", @placeholder = "Enter name.." })
+</div>
+
+<button type="submit" class="btn btn-success">Add Customer</button>
+}
